@@ -34,7 +34,7 @@ class NavBar extends React.Component {
     return (
       <Container textAlign="center" id="twitter-form">
         <Header as="h2" icon textAlign="center" inverted>
-          <Header.Content>Inner Most</Header.Content>
+          <Header.Content id="logo">Inner Most</Header.Content>
           <Icon name="user" inverted />
         </Header>
         <Form onSubmit={this.handleSubmit}>
@@ -44,7 +44,7 @@ class NavBar extends React.Component {
             placeholder="type your twitter username"
             style={{ maxWidth: "200px" }}
           />
-          <Button> Submit </Button>
+          <Button inverted> Submit </Button>
         </Form>
       </Container>
     );
