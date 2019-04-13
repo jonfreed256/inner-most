@@ -16,10 +16,10 @@ class NavBar extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <Container textAlign="center">
+      <Container textAlign="center" id="twitter-form">
         <Header as="h2" icon textAlign="center">
           <Header.Content>Inner Most</Header.Content>
-          <Icon name="users" circular />
+          <Icon name="user" circular />
         </Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
