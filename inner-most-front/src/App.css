@@ -1,6 +1,6 @@
 #twitter-form {
   position: relative !important;
-  top: 20vh !important;
+  top: 30vh !important;
 }
 
 .route-wrapper {
@@ -9,4 +9,9 @@
 
 .route-wrapper > div {
   position: absolute;
+}
+
+#gradient {
+  width: 100vw;
+  height: 100vh;
 }

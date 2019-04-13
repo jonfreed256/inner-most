@@ -6,6 +6,7 @@ import { Route, withRouter } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Welcome from "./components/Welcome";
+import { Gradient } from "react-gradient";
 
 class App extends Component {
   // we need to map the `scale` prop we define below
@@ -44,20 +45,28 @@ class App extends Component {
         scale: this.bounce(1)
       }
     };
+    const gradients = [["#bd19d6", "#ea7d10"], ["#ff2121", "#25c668"]];
     return (
-      <div>
-        <NavBar />
-        <AnimatedSwitch
-          atEnter={bounceTransition.atEnter}
-          atLeave={bounceTransition.atLeave}
-          atActive={bounceTransition.atActive}
-          mapStyles={this.mapStyles}
-          className="route-wrapper"
-        >
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/welcome" component={Welcome} />
-        </AnimatedSwitch>
-      </div>
+      <Gradient
+        gradients={gradients} // required
+        property="background"
+        duration={3000}
+        angle="45deg"
+      >
+        <div id="gradient">
+          <NavBar />
+          <AnimatedSwitch
+            atEnter={bounceTransition.atEnter}
+            atLeave={bounceTransition.atLeave}
+            atActive={bounceTransition.atActive}
+            mapStyles={this.mapStyles}
+            className="route-wrapper"
+          >
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/welcome" component={Welcome} />
+          </AnimatedSwitch>
+        </div>
+      </Gradient>
     );
   }
 }
