@@ -13,6 +13,21 @@ class NavBar extends React.Component {
   handleSubmit = () => {
     console.log(this.state.username);
   };
+
+  checkEmotion = () => {
+    var unirest = require("unirest");
+    unirest
+      .post("https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/")
+      .header("X-RapidAPI-Host", "twinword-emotion-analysis-v1.p.rapidapi.com")
+      .header(
+        "X-RapidAPI-Key",
+        "16cc5bd8dcmsh6907259db58b42cp1abd80jsn031467cd6f42"
+      )
+      .header("Content-Type", "application/x-www-form-urlencoded")
+      .send(`text=I don't like to eat spinach or kale.`)
+      .end(result => console.log(result.status, result.headers, result.body));
+  };
+
   render() {
     console.log(this.state);
     return (

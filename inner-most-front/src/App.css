@@ -2,3 +2,11 @@
   position: relative !important;
   top: 20vh !important;
 }
+
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper > div {
+  position: absolute;
+}
